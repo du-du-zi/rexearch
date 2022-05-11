@@ -1,3 +1,5 @@
+import html
+
 number_tokens = {
     '-':['-',0],
     '.':['.',0],
@@ -53,3 +55,6 @@ def find_unit_number(unit_number):
         result += str(number_table[i][0])
 
     return result if result.isdigit() else format(eval(result),',')
+
+def html_entity_decoder(html_entity):
+    return html.unescape(html_entity)
