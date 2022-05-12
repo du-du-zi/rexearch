@@ -1,0 +1,14 @@
+{
+	"version": "0.1",
+	"rexearch_version": "0.1.5",
+	"description": "Jay Test rules",
+	"rules":
+		[
+			{
+				"id": "NumberRule3",
+                "regex": "([\\-±]?((\\d,\\d{3}|\\d)+([.]\\d+)?[백천만억조]{1,2}[ ]?)+(\\d,\\d{3}|\\d+)?)",
+				"target_regex_group" : 0,
+				"repr": "{custom_function['find_unit_number'](group(0))}"
+			}
+		]
+}

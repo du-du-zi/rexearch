@@ -12,17 +12,24 @@
 				"tags": "{group(3)}"
             },
 			{
-				"id": "HangleNumberRule",
-                "regex": "(?![\\s])([일이삼사오육칠팔구십백천만억조 ]+)(원|달러|불|엔|위안|루피|유로|파운드)",
-				"target_regex_group" : 0,
-				"repr": "{custom_function['find_unit_number'](group(1))}",
-				"tags": "{group(2)}"
+				"id": "NumberRule1",
+                "regex": "[\\s…‘“·~∼(),\\[\\]→#＃+:：=&<>$`*%!±-]((\\d+|\\d,\\d{3}(,\\d{3})+)[./]\\d+)([^.:/\\+])",
+				"target_regex_group" : 0
             },
 			{
-				"id": "NumberRule",
-                "regex": "(?![ ,.])(-?[\\d ,.]+[½-⅞]?)",
-				"target_regex_group" : 0,
-				"tags": "NUMBER"
+				"id": "NumberRule2",
+                "regex": "(?![,.])([-±]?\\d+[½-⅞]?)",
+				"target_regex_group" : 0
+			},
+			{
+				"id": "NumberRule3",
+                "regex": "[\\-±]?((\\d,\\d{3}|\\d)+([.]\\d+)?[백천만억조]{1,2}[ ]?)+(\\d,\\d{3}|\\d+)?",
+				"target_regex_group" : 0
+			},
+			{
+				"id": "NumberRule4",
+                "regex": "([\\-±]?((\\d,\\d{3}|\\d{1,4})([.]\\d+)?[백천만억조]{1,2}[ ]?)+(\\d,\\d{3}|\\d+)?)(일|원|명)",
+				"target_regex_group" : 0
 			},
 			{
 				"id": "HTMLEntityRule",
