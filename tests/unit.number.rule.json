@@ -1,5 +1,5 @@
 {
-	"version": "0.1",
+	"version": "0.2",
 	"rexearch_version": "0.1.5",
 	"description": "Jay Test rules",
 	"rules":
@@ -7,10 +7,10 @@
 
             {
 				"id": "UnitNumberRule",
-                "regex": "((-\\d+|\\d+)\\.?[\\d, 십백천만억조]+)(명|회|건|배|%|원)",
+                "regex": "([\\-±]?((\\d,\\d{3}|\\d{1,4})([.]\\d+)?[백천만억조]{1,2}[ ]?)+(\\d,\\d{3}|\\d+)?)(원|건|%|장|명)",
 				"target_regex_group" : 0,
 				"repr": "{custom_function['find_unit_number'](group(1))}",
-				"tags": "{group(3)}"
+				"tags": "{group(6)}"
             }
         ]
 }

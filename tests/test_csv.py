@@ -8,8 +8,8 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")
 import rexearch  # noqa : E402
 
 rx = rexearch.Rexearch()
-rx.load_json_file("tests/test.rule.json")
-# rx.load_json_file("tests/unit.number.rule.json")
+# rx.load_json_file("tests/test.rule.json")
+rx.load_json_file("tests/unit.number.rule.json")
 # rx.load_json_file("tests/jay.test.rules.json")
 sample_input = open("tests/titles.csv", mode="r",encoding='utf-8')
 
